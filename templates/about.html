@@ -1,0 +1,140 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>About Me</h1>
+    <div class="about-card">
+        <p class="about-description" data-text="Passionate Software Developer">
+            Hello! I am <strong>Woldemichael Debesaw</strong>, a passionate software developer with a keen interest in web development, technology, and innovation. I am currently studying Information Technology at <strong>Wolkite University</strong> and will graduate in 2024. I have worked on several projects using a variety of technologies and enjoy solving complex problems.
+        </p>
+        <p class="about-description" data-text="Driven by Learning & Innovation">
+            I love learning new skills and continuously improving my craft. My goal is to create solutions that can positively impact businesses and individuals. As I continue my journey in software development, I aspire to contribute to innovative technologies that enhance productivity and efficiency.
+        </p>
+        <p class="about-description" data-text="Expert in Web & App Development">
+            My expertise lies in various programming languages, web development frameworks, and databases. I'm passionate about creating <strong>user-friendly, scalable, and efficient applications</strong>.
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* Basic reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Container Styling */
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        color: #2c3e50;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Underline Effect */
+    h1::after {
+        content: '';
+        display: block;
+        width: 60%;
+        height: 4px;
+        background-color: #3498db;
+        margin: 10px auto 0;
+        border-radius: 4px;
+    }
+
+    /* About Card Styling */
+    .about-card {
+        background: linear-gradient(135deg, #ffffff, #f9f9f9);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* About Description Styling */
+    .about-description {
+        font-size: 18px;
+        color: #34495e;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 5px;
+        position: relative;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hover Pop-up Effect */
+    .about-description:hover::before {
+        content: attr(data-text);
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(52, 152, 219, 0.9);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .about-description:hover::before {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px);
+    }
+
+    /* Hover effect on paragraphs */
+    .about-description:hover {
+        background-color: rgba(52, 152, 219, 0.1);
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 768px) {
+        .container {
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .about-description {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 28px;
+        }
+
+        .about-description {
+            font-size: 14px;
+        }
+    }
+</style>
+{% endblock %}

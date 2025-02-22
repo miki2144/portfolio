@@ -1,0 +1,163 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="skills-container">
+    <h1>My Skills</h1>
+    <div class="skills-grid">
+        <div class="skill-card python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo">
+            <p>Python</p>
+        </div>
+
+        <div class="skill-card javascript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo">
+            <p>JavaScript</p>
+        </div>
+
+        <div class="skill-card html-css">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo">
+            <p>HTML & CSS</p>
+        </div>
+
+        <div class="skill-card react">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo">
+            <p>React</p>
+        </div>
+
+        <div class="skill-card flask">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask Logo">
+            <p>Flask</p>
+        </div>
+
+        <div class="skill-card mysql">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Logo">
+            <p>MySQL</p>
+        </div>
+
+        <div class="skill-card git">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo">
+            <p>Git & GitHub</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+<style>
+    /* General Styling */
+    body {
+        background: #f9f9f9;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .skills-container {
+        text-align: center;
+        padding: 30px 10px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+        justify-content: center;
+    }
+
+    /* Skill Card */
+    .skill-card {
+        width: 140px;
+        height: 140px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    .skill-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .skill-card img {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 6px;
+        filter: brightness(0) invert(1);
+    }
+
+    .skill-card p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    /* Unique Background Colors */
+    .python { background: linear-gradient(135deg, #306998, #4B8BBE); }
+    .javascript { background: linear-gradient(135deg, #F7DF1E, #FFD700); color: #000; }
+    .html-css { background: linear-gradient(135deg, #E34F26, #F06529); }
+    .react { background: linear-gradient(135deg, #61DAFB, #2188ff); color: #000; }
+    .flask { background: linear-gradient(135deg, #000, #333); }
+    .mysql { background: linear-gradient(135deg, #00758F, #00A8E1); }
+    .git { background: linear-gradient(135deg, #F1502F, #E94E32); }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 28px;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(3, minmax(120px, 1fr));
+            gap: 8px;
+        }
+
+        .skill-card {
+            width: 120px;
+            height: 120px;
+        }
+
+        .skill-card img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .skill-card p {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .skills-grid {
+            grid-template-columns: repeat(2, minmax(110px, 1fr));
+        }
+
+        .skill-card {
+            width: 110px;
+            height: 110px;
+        }
+
+        .skill-card img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .skill-card p {
+            font-size: 11px;
+        }
+    }
+</style>
+{% endblock %}

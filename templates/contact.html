@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+<head>
+    <style>
+        /* Contact Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+{% block content %}
+<h1>Contact</h1>
+<p>If you would like to get in touch, feel free to send me a message.</p>
+<p>Email: your-email@example.com</p>
+<p>Phone: 123-456-7890</p>
+
+<!-- Contact Form -->
+<div class="contact-form">
+    <form method="POST" action="/send-message">  <!-- Update the action URL as needed -->
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+{% endblock %}

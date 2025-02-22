@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #f39c12;
+        }
+
+        /* Hover effect for all list items */
+        ul li:hover {
+            background-color: #f0f0f0; /* Light background on hover */
+            color: #f39c12; /* Change text color on hover */
+        }
+
+        /* Zoom Effect for Links */
+        .zoom-link {
+            color: #f39c12;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s;
+        }
+
+        .zoom-link:hover {
+            transform: scale(1.1);
+            color: rgb(230, 34, 34); /* Change color on hover */
+        }
+
+        /* Profile Image Styles */
+        .profile-image {
+            border-radius: 50%; /* Makes the image circular */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+            width: 150px; /* Set your desired width */
+            height: 150px; /* Set your desired height */
+            object-fit: cover; /* Ensures the image covers the container without distortion */
+            float: right; /* Aligns the image to the right */
+            margin-left: 20px; /* Adds space between the text and image */
+            transition: transform 0.3s; /* Enables smooth transformation */
+        }
+
+        /* Wave Effect on Hover */
+        .profile-image:hover {
+            animation: wave 0.5s ease-in-out;
+        }
+
+        @keyframes wave {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-5px); }
+            50% { transform: translateY(0); }
+            75% { transform: translateY(-3px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        body.dark-mode nav {
+            background-color: #1e1e1e;
+        }
+
+        body.dark-mode .nav-menu a {
+            color: #f1f1f1;
+        }
+
+        body.dark-mode .nav-menu a:hover {
+            color: #f39c12;
+        }
+
+        /* Main content styles */
+        .main-content {
+            padding: 20px;
+            transition: background-color 0.3s;
+        }
+
+        body .main-content {
+            background-color: #f9f9f9;
+        }
+
+        body.dark-mode .main-content {
+            background-color: #1a1a1a;
+        }
+
+        /* Marquee Styles */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            color: #f39c12; /* Change color as needed */
+            font-size: 2em; /* Adjust size as needed */
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        body.dark-mode section {
+            background-color: #2a2a2a;
+        }
+
+        /* Visual Search Button */
+        .visual-search {
+            display: flex;
+            align-items: center;
+            background-color: transparent; /* No background */
+            color: #f39c12; /* Icon color */
+            cursor: pointer;
+            transition: color 0.3s;
+            margin-left: auto; /* Align to the right */
+        }
+
+        .visual-search:hover {
+            color: #e67e22; /* Change color on hover */
+        }
+
+        .visual-search i {
+            font-size: 24px; /* Set icon size */
+        }
+
+        /* Scroll Icons */
+        .scroll-icons {
+            position: fixed;
+            right: 20px;
+            bottom: 70px; /* Increased from 20px to 70px */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .scroll-icons a {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f39c12;
+        }
+
+        /* Hover effect for all paragraphs */
+        p:hover {
+            color: #e67e22; /* Change color on hover */
+        }
+
+        /* Hover effect for all links within paragraphs */
+        p a:hover {
+            text-decoration: underline; /* Underline links on hover */
+            color: #f39c12; /* Change link color on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                background-color: #333;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#" id="toggle-mode" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1 class="marquee">Welcome to Amere Moges' website</h1>
+        <img src="/static/images/photo_me.jpg" alt="Your Image Description" class="profile-image" onclick="openGoogleSearchWithImage()">
+        <div class="visual-search" title="Try Visual Search" onclick="openGoogleSearch()">
+            <i class="fas fa-camera"></i>
+        </div>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>My name is <a href="#" class="zoom-link">Amere Moges</a>, and I hold a <strong>BA Degree in Management from Addis Ababa University</strong> (2020) with a <strong>CGPA of 3.92</strong> and a <strong>Master’s in Business Administration</strong> from <strong>Maryland International College</strong> (2024) with a <strong>perfect CGPA of 4.0</strong>. I am highly motivated, detail-oriented, and have a strong passion for business strategy and financial management.</p>
+            <p>Currently, I am working as a <strong>Resident Auditor II at Dashen Bank SC</strong>, where I contribute to risk assessment, financial analysis, and internal auditing processes.</p>
+            <p>In addition to my academic and professional achievements, I possess strong communication skills that enable me to connect easily with individuals from diverse backgrounds. I believe that effective communication is vital in fostering collaboration and understanding in any workplace.</p>
+            <p>My ability to articulate complex ideas clearly and concisely allows me to convey information effectively, whether I am presenting findings to senior management or collaborating with team members.</p>
+            <p>I am adept at building relationships and maintaining a positive rapport with colleagues and clients alike, which enhances teamwork and productivity.</p>
+            <p>Furthermore, I value feedback and actively seek opportunities for improvement, ensuring that I remain adaptable and responsive to the needs of those around me.</p>
+            <p>Ultimately, my goal is to leverage my communication skills and analytical expertise to contribute positively to my organization and support its strategic objectives.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>I have four years of experience in auditing, financial analysis, and risk management within the banking sector. My key responsibilities include:</p>
+            <ul>
+                <li>Conducting internal audits and financial risk assessments at Dashen Bank SC.</li>
+                <li>Developing reports on compliance, fraud detection, and financial efficiency.</li>
+                <li>Providing strategic insights to enhance internal control mechanisms.</li>
+                <li>Collaborating with cross-functional teams to identify operational inefficiencies and recommend solutions.</li>
+                <li>Implementing audit plans that align with regulatory requirements and organizational goals.</li>
+                <li>Training and mentoring junior auditors, fostering a culture of continuous learning and professional development.</li>
+                <li>Utilizing advanced analytical tools to assess financial data and support data-driven decision-making.</li>
+            </ul>
+            <p>My role also involves regular communication with stakeholders to ensure transparency and build trust in the auditing process. I am committed to delivering high-quality work and continuously improving the effectiveness of audit procedures.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Financial Analysis & Auditing</li>
+                <li>Risk Management & Compliance</li>
+                <li>Strategic Business Planning</li>
+                <li>Data-Driven Decision Making</li>
+                <li>Excellent Communication & Leadership</li>
+                <li>Proficiency in Financial Software (e.g., QuickBooks, SAP)</li>
+                <li>Ability to Conduct Market Research and Competitive Analysis</li>
+                <li>Strong Problem-Solving Skills and Critical Thinking</li>
+                <li>Project Management and Team Coordination</li>
+                <li>Adaptability in Fast-Paced Environments</li>
+            </ul>
+            <p>My skill set enables me to navigate complex financial landscapes and contribute to informed decision-making processes. I am committed to continuous professional development, regularly updating my knowledge of industry trends and best practices.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: amere.moges@example.com</p>
+            <p>Phone: +251 963080716</p>
+            <p>LinkedIn: <a href=""https://www.linkedin.com/">linkedin.com/in/amere-moges</a></p>
+        </section>
+    </div>
+
+    <div class="scroll-icons">
+        <a href="#home"><i class="fas fa-chevron-up"></i></a>
+        <a href="#contact"><i class="fas fa-chevron-down"></i></a>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 Amere Moges. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('toggle-mode').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Function to open Google search
+        function openGoogleSearch() {
+            window.open('https://www.google.com/search?q=', '_blank');
+        }
+
+        // Function to search for the image
+        function openGoogleSearchWithImage() {
+            const imageUrl = '/static/images/photo_me.jpg'; // Image source
+            window.open('https://www.google.com/searchbyimage?site=search&sa=X&image_url=' + encodeURIComponent(imageUrl), '_blank');
+        }
+    </script>
+</body>
+</html>
