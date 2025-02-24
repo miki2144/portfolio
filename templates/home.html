@@ -44,8 +44,8 @@
 
         /* Hover effect for all list items */
         ul li:hover {
-            background-color: #f0f0f0; /* Light background on hover */
-            color: #f39c12; /* Change text color on hover */
+            background-color: #f0f0f0;
+            color: #f39c12;
         }
 
         /* Zoom Effect for Links */
@@ -57,22 +57,21 @@
 
         .zoom-link:hover {
             transform: scale(1.1);
-            color: rgb(230, 34, 34); /* Change color on hover */
+            color: rgb(230, 34, 34);
         }
 
         /* Profile Image Styles */
         .profile-image {
-            border-radius: 50%; /* Makes the image circular */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-            width: 150px; /* Set your desired width */
-            height: 150px; /* Set your desired height */
-            object-fit: cover; /* Ensures the image covers the container without distortion */
-            float: right; /* Aligns the image to the right */
-            margin-left: 20px; /* Adds space between the text and image */
-            transition: transform 0.3s; /* Enables smooth transformation */
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            float: right;
+            margin-left: 20px;
+            transition: transform 0.3s;
         }
 
-        /* Wave Effect on Hover */
         .profile-image:hover {
             animation: wave 0.5s ease-in-out;
         }
@@ -137,18 +136,14 @@
             overflow: hidden;
             white-space: nowrap;
             box-sizing: border-box;
-            color: #f39c12; /* Change color as needed */
-            font-size: 2em; /* Adjust size as needed */
+            color: #f39c12;
+            font-size: 2em;
             animation: marquee 10s linear infinite;
         }
 
         @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
 
         /* Section Styles */
@@ -168,26 +163,26 @@
         .visual-search {
             display: flex;
             align-items: center;
-            background-color: transparent; /* No background */
-            color: #f39c12; /* Icon color */
+            background-color: transparent;
+            color: #f39c12;
             cursor: pointer;
             transition: color 0.3s;
-            margin-left: auto; /* Align to the right */
+            margin-left: auto;
         }
 
         .visual-search:hover {
-            color: #e67e22; /* Change color on hover */
+            color: #e67e22;
         }
 
         .visual-search i {
-            font-size: 24px; /* Set icon size */
+            font-size: 24px;
         }
 
         /* Scroll Icons */
         .scroll-icons {
             position: fixed;
             right: 20px;
-            bottom: 70px; /* Increased from 20px to 70px */
+            bottom: 70px;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -225,15 +220,34 @@
             color: #f39c12;
         }
 
+        /* Download Button Styles */
+        .cv-button {
+            background-color: #f39c12;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .cv-button:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+
         /* Hover effect for all paragraphs */
         p:hover {
-            color: #e67e22; /* Change color on hover */
+            color: #e67e22;
         }
 
         /* Hover effect for all links within paragraphs */
         p a:hover {
-            text-decoration: underline; /* Underline links on hover */
-            color: #f39c12; /* Change link color on hover */
+            text-decoration: underline;
+            color: #f39c12;
         }
 
         /* Responsive Styles */
@@ -289,12 +303,11 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>My name is <a href="#" class="zoom-link">Amere Moges</a>, and I hold a <strong>BA Degree in Management from Addis Ababa University</strong> (2020) with a <strong>CGPA of 3.92</strong> and a <strong>Master’s in Business Administration</strong> from <strong>Maryland International College</strong> (2024) with a <strong>perfect CGPA of 4.0</strong>. I am highly motivated, detail-oriented, and have a strong passion for business strategy and financial management.</p>
+            <p>My name is <a href="#" class="zoom-link">Amere Moges</a>, and I hold a <strong>Master of Business Administration</strong> from <strong>Maryland International College</strong> (2024) with a <strong>perfect CGPA of 4.0</strong>. I also hold a <strong>BA Degree in Management</strong> from <strong>Addis Ababa University</strong> (2020) with a <strong>CGPA of 3.92</strong>. I am highly motivated, detail-oriented, and have a strong passion for business strategy and financial management.</p>
             <p>Currently, I am working as a <strong>Resident Auditor II at Dashen Bank SC</strong>, where I contribute to risk assessment, financial analysis, and internal auditing processes.</p>
             <p>In addition to my academic and professional achievements, I possess strong communication skills that enable me to connect easily with individuals from diverse backgrounds. I believe that effective communication is vital in fostering collaboration and understanding in any workplace.</p>
             <p>My ability to articulate complex ideas clearly and concisely allows me to convey information effectively, whether I am presenting findings to senior management or collaborating with team members.</p>
-            <p>I am adept at building relationships and maintaining a positive rapport with colleagues and clients alike, which enhances teamwork and productivity.</p>
-            <p>Furthermore, I value feedback and actively seek opportunities for improvement, ensuring that I remain adaptable and responsive to the needs of those around me.</p>
+            <p>I am adept at building relationships and maintaining a positive rapport with colleagues and clients alike, which enhances teamwork and productivity. Furthermore, I value feedback and actively seek opportunities for improvement, ensuring that I remain adaptable and responsive to the needs of those around me.</p>
             <p>Ultimately, my goal is to leverage my communication skills and analytical expertise to contribute positively to my organization and support its strategic objectives.</p>
         </section>
 
@@ -302,39 +315,51 @@
             <h2>Experience</h2>
             <p>I have four years of experience in auditing, financial analysis, and risk management within the banking sector. My key responsibilities include:</p>
             <ul>
-                <li>Conducting internal audits and financial risk assessments at Dashen Bank SC.</li>
-                <li>Developing reports on compliance, fraud detection, and financial efficiency.</li>
-                <li>Providing strategic insights to enhance internal control mechanisms.</li>
-                <li>Collaborating with cross-functional teams to identify operational inefficiencies and recommend solutions.</li>
-                <li>Implementing audit plans that align with regulatory requirements and organizational goals.</li>
-                <li>Training and mentoring junior auditors, fostering a culture of continuous learning and professional development.</li>
-                <li>Utilizing advanced analytical tools to assess financial data and support data-driven decision-making.</li>
+                 <p>Conducting internal audits and financial risk assessments at Dashen Bank SC.</p>
+                 <p>Developing reports on compliance, fraud detection, and financial efficiency.</p>
+                 <p>Providing strategic insights to enhance internal control mechanisms.</p>
+                 <p>Collaborating with cross-functional teams to identify operational inefficiencies and recommend solutions.</p>
+                 <p>Implementing audit plans that align with regulatory requirements and organizational goals.</p>
+                 <p>Training and mentoring junior auditors, fostering a culture of continuous learning and professional development.</p>
+                 <p>Utilizing advanced analytical tools to assess financial data and support data-driven decision-making.</p>
             </ul>
             <p>My role also involves regular communication with stakeholders to ensure transparency and build trust in the auditing process. I am committed to delivering high-quality work and continuously improving the effectiveness of audit procedures.</p>
+            <h3>Previous Roles:</h3>
+            <ul>
+                <p><strong>Customer Service Officer</strong> at Dashen Bank SC, Addis Ababa, Ethiopia | April 2021 – August 2024</p>
+            </ul>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
             <ul>
-                <li>Financial Analysis & Auditing</li>
-                <li>Risk Management & Compliance</li>
-                <li>Strategic Business Planning</li>
-                <li>Data-Driven Decision Making</li>
-                <li>Excellent Communication & Leadership</li>
-                <li>Proficiency in Financial Software (e.g., QuickBooks, SAP)</li>
-                <li>Ability to Conduct Market Research and Competitive Analysis</li>
-                <li>Strong Problem-Solving Skills and Critical Thinking</li>
-                <li>Project Management and Team Coordination</li>
-                <li>Adaptability in Fast-Paced Environments</li>
+                 <p>Financial Analysis & Auditing</p>
+                 <p>Risk Management & Compliance</p>
+                 <p>Strategic Business Planning</p>
+                 <p>Data-Driven Decision Making</p>
+                 <p>Excellent Communication & Leadership</p>
+                 <p>Proficiency in Financial Software (e.g., QuickBooks, SAP)</p>
+                 <p>Ability to Conduct Market Research and Competitive Analysis</p>
+                 <p>Strong Problem-Solving Skills and Critical Thinking</p>
+                 <p>Project Management and Team Coordination</p>
+                 <p>Adaptability in Fast-Paced Environments</p>
             </ul>
             <p>My skill set enables me to navigate complex financial landscapes and contribute to informed decision-making processes. I am committed to continuous professional development, regularly updating my knowledge of industry trends and best practices.</p>
         </section>
 
+        <section id="cv">
+            <h2>Download  CV</h2>
+            <p>You can download my CV using the button below:</p>
+            <a href="/static/CV_Amere_Moges.pdf" download>
+                <button class="cv-button">Download CV</button>
+            </a>
+        </section>
+
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: amere.moges@example.com</p>
-            <p>Phone: +251 963080716</p>
-            <p>LinkedIn: <a href=""https://www.linkedin.com/">linkedin.com/in/amere-moges</a></p>
+            <p>Email: <a href="mailto:mogesamere@gmail.com">mogesamere@gmail.com</a></p>
+            <p>Phone: +251 963632527</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/amere-asmare" target="_blank">linkedin.com/in/amere-asmare</a></p>
         </section>
     </div>
 
@@ -359,7 +384,6 @@
             document.body.classList.toggle('dark-mode');
         });
 
-        // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
 
@@ -367,14 +391,12 @@
             navMenu.classList.toggle('active');
         });
 
-        // Function to open Google search
         function openGoogleSearch() {
             window.open('https://www.google.com/search?q=', '_blank');
         }
 
-        // Function to search for the image
         function openGoogleSearchWithImage() {
-            const imageUrl = '/static/images/photo_me.jpg'; // Image source
+            const imageUrl = '/static/images/photo_me.jpg';
             window.open('https://www.google.com/searchbyimage?site=search&sa=X&image_url=' + encodeURIComponent(imageUrl), '_blank');
         }
     </script>
